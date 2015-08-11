@@ -27,4 +27,7 @@ echo "abc,xyz" > test.csv
 ADD JAR ~/target/DoubleColumn-1.0.0.jar;
 CREATE TEMPORARY FUNCTION double_column AS 'openkb.hive.udtf.DoubleColumn'; 
 SELECT double_column(a,b) as (a1,a2,b) FROM testudtf;
+
+Result:
+abc	abc	xyz
 ```
