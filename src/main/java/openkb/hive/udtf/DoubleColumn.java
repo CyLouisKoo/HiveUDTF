@@ -17,13 +17,13 @@ public class DoubleColumn extends GenericUDTF {
 
 	private PrimitiveObjectInspector targetColumnOI = null;
 	private PrimitiveObjectInspector extraColumn = null;
-	private List<PrimitiveObjectInspector> extraColumnList = new ArrayList<PrimitiveObjectInspector>();
+	private List<PrimitiveObjectInspector> extraColumnList; 
 	private List<Object> outputColumnAddList = new ArrayList<Object>();
 	private static int DEFAULT_RET_COLUMN = 2;
 
 	@Override
 	public StructObjectInspector initialize(ObjectInspector[] args) throws UDFArgumentException {
-
+                extraColumnList = new ArrayList<PrimitiveObjectInspector>();
 		ArrayList<String> fieldNames = new ArrayList<String>();
 		ArrayList<ObjectInspector> fieldOIs = new ArrayList<ObjectInspector>();
 
